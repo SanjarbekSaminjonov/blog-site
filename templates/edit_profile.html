@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Edit profile
+{% endblock title %}
+
+{% block content %}
+    <div style="width: 80%; margin: auto;">
+        <h1 class="text-center">Shaxsiy ma'lumotlar</h1>
+        {{ error }}
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="float-end btn btn-success mt-3" type="submit" value="Tahrirlash">
+        </form>
+    </div>
+{% endblock content %}

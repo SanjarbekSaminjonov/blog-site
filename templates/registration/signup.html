@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Ro'yxatdan o'tish
+{% endblock title %}
+
+{% block content %}
+    <div style="width:80%; margin: auto;">
+        <h1 class="text-center">Ro'yxatdan o'tish</h1>
+        <form action="" method="post">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input class="btn btn-outline-dark float-end" type="submit" value="Ro'yxatdan o'tish">
+            
+        </form>
+    </div>
+
+    <br> <br> <br>
+{% endblock content %}

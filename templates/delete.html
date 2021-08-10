@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Delete post
+{% endblock title %}
+
+{% block content %}
+    <div style="width: 80%; margin:auto;">
+        <h1 class="text-center">Postni o'chirish</h1>
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <input class="btn btn-danger" type="submit" value="O'chirish">
+            </div>
+            
+        </form>
+    </div>
+{% endblock content %}

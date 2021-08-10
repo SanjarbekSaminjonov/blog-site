@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Edit post
+{% endblock title %}
+
+{% block content %}
+    <div style="width:80%; margin:auto;">
+        <h1 class="text-center">Tahrirlash</h1>
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input class="btn btn-success float-end mt-3" type="submit" value="Tahrirlash">
+            
+        </form>
+    </div>
+{% endblock content %}

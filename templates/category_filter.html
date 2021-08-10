@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Category Filter
+{% endblock title %}
+
+{% block content %}
+
+    <div>
+        <h1 class="text-center">{{ category }}</h1>
+        {% for post in object_list %}
+        <hr>
+        <div class="card" style="width: 80%; margin: auto;">
+            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">
+                    {{ post.body | slice:':100' }}...
+                    <a href="{% url 'detail' post.pk %}">Batafsil</a>
+                </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Author: {{ post.author.first_name }}</li>
+                <li class="list-group-item">Region: {{ post.get_region }}</li>
+                <li class="list-group-item">Published: {{ post.published }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

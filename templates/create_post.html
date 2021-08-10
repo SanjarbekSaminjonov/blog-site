@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Post qo'shish
+{% endblock title %}
+
+{% block content %}
+    <div style="width: 80%; margin: auto;">
+        <h1 class="text-center">Yangi post qo'shish</h1>
+        {{ error }}
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input class="float-end m-3 btn btn-primary" type="submit" value="Qo'shish">
+            
+        </form>
+    </div>
+    <br> <br>
+{% endblock content %}
