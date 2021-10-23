@@ -7,3 +7,7 @@ I used the following technologies:
   html
   css
   bootstrap
+
+
+
+http://blog1263.pythonanywhere.com/
