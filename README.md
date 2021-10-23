@@ -1,4 +1,4 @@
-# prowork-blog
+# blog site
 
 I used the following technologies:
 
